@@ -22,6 +22,9 @@ class CartProvider with ChangeNotifier {
   }
 
   void clearCart() {
+    for (Product item in _cartList) {
+      item.availability++;
+    }
     _cartList.clear();
     notifyListeners();
   }

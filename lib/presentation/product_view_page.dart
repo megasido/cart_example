@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:testb6/application/cart_provider.dart';
 import 'package:testb6/data/product_list.dart';
@@ -30,9 +29,20 @@ class ProductViewPage extends StatelessWidget {
           return ListView.builder(
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(productList[index].name.toString()),
-                subtitle: Text(productList[index].description.toString()),
-                trailing: Text(productList[index].price.toString()),
+                title: Text(
+                  productList[index].name.toString(),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                subtitle: Text(productList[index].description.toString(),
+                    style: const TextStyle(
+                      fontSize: 14,
+                    )),
+                trailing: Text('\$${productList[index].price.toString()}',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    )),
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

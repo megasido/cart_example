@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:testb6/application/cart_provider.dart';
 import 'package:testb6/data/product_list.dart';
 
-import '../data/product_list.dart';
-
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 

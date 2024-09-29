@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:testb6/application/cart_provider.dart';
-import 'package:testb6/data/product_list.dart';
 import 'package:testb6/domain/product.dart';
 import 'package:testb6/presentation/cart_page.dart';
 
@@ -34,9 +32,19 @@ class ProductDetailPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(product.description.toString()),
-                Text(product.price.toString()),
-                Text(product.availability.toString()),
+                Text(
+                  product.description.toString(),
+                  style: const TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+                Text(product.price.toString(),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+                Text(product.availability.toString(),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
                 ElevatedButton(
                   onPressed: product.availability > 0
                       ? () {
